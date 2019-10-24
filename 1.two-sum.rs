@@ -14,7 +14,7 @@ impl Solution {
             match map.get(&complement) {
                 Some(&index) => {
                     return vec![index as i32, i as i32];
-                },
+                }
                 None => map.insert(num, i),
             };
         }
@@ -22,4 +22,3 @@ impl Solution {
     }
 }
 // @lc code=end
-
