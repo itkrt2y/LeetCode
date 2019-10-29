@@ -7,15 +7,10 @@
 // @lc code=start
 impl Solution {
     pub fn length_of_last_word(s: String) -> i32 {
-        let mut words = s.split(" ").collect::<Vec<&str>>();
-        loop {
-            match words.last() {
-                None => return 0,
-                Some(&"") => {
-                    words.pop().unwrap();
-                }
-                Some(word) => return word.len() as i32,
-            }
+        let mut words = s.trim().split(" ").collect::<Vec<&str>>();
+        match words.pop() {
+            None => 0,
+            Some(word) => word.len() as i32,
         }
     }
 }
